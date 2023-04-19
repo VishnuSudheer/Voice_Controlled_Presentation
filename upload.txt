@@ -1,0 +1,33 @@
+ app.post("/", upload.single("myFile"), (req, res) => {
+    // Access the uploaded file using req.file
+    console.log(req.file);
+    console.log(req.file.originalname);
+
+    convertapi
+      .convert("png", {
+        File: "D:/Mini-Project/Presentation/ppt/" + req.file.originalname,
+      })
+      .then(function (result) {
+        //get converted file url
+       console.log("Converted file url: " + result.file.url);
+
+         //save to file
+        result
+          .saveFiles("D:/Mini-Project/Presentation/png")
+          .then(function (files) {
+            console.log("Files saved: " + files);
+            fs.writeFile('./Presentation/DATA.txt', JSON.stringify(files), function (err) {
+             if (err) throw err;
+             console.log('File is created successfully.');
+           });
+          
+          });
+      })
+
+      .catch(function (e) {
+        console.error(e.toString());
+      });
+
+
+ return res.redirect("/loading");
+ });
