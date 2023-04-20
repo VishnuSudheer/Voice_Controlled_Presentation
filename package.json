@@ -5,9 +5,7 @@
   "main": "ppt_png.js",
   "homepage": "https://VishnuSudheer.github.io/Voice_Controlled_Presentation",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
