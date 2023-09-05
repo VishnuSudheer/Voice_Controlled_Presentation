@@ -5,6 +5,7 @@
   "main": "ppt_png.js",
   "homepage": "https://VishnuSudheer.github.io/Voice_Controlled_Presentation",
   "scripts": {
+    "start": "node upload.js"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
